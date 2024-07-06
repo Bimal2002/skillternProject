@@ -90,6 +90,14 @@ export interface CourseError {
     errorType: string;
   };
 }
+export interface CouponError {
+  status: number;
+  data: {
+    message: string;
+    errorType: string;
+  };
+}
+
 
 export interface adminLoginError {
   error: {

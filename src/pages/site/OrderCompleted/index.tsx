@@ -24,3 +24,10 @@ const OrderCompleted: React.FC = () => {
 };
 
 export default OrderCompleted;
+
+
+
+
+
+
+

@@ -51,6 +51,11 @@ import SubsribeCourse from './pages/site/SubscribeCourse';
 import ViewCart from './pages/site/ViewCart';
 import { RootState } from './store/store';
 import { UserRole } from './types/user.type';
+import AddCouponComponent from './pages/admin/Coupon';
+// const cors = require('cors');
+
+
+
 
 function App() {
   if (!localStorage.getItem('cart')) {
@@ -292,6 +297,10 @@ function App() {
           element: isAuth ? <SubsribeCourse /> : <ErrorPage page='/' />
         }
       ]
+    },
+    {
+      path: 'author/add-coupon',
+      element: isAdminAuth ? <AddCouponComponent /> : <ErrorPage page='/author-login' />
     }
   ]);
 
