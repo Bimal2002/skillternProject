@@ -3,6 +3,6 @@ export interface ICoupon {
   code: string;
   discount: number;
   description: string;
-  validFrom: string | Date; // Adjust based on actual use case
-  validUntil: string | Date; // Adjust based on actual use case
+  dateStart:  Date; // Adjust based on actual use case
+  dateEnd: Date; // Adjust based on actual use case
 }

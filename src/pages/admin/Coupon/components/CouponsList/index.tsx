@@ -18,8 +18,8 @@ interface DataCouponType {
   code: string;
   discount: number;
   description: string;
-  validFrom: string;
-  validUntil: string;
+  validFrom: Date;
+  validUntil: Date;
   actions?: any;
 }
 
@@ -145,8 +145,8 @@ const CouponList: React.FC<CouponListProps> = (props) => {
     code: couponItem.code,
     discount: couponItem.discount,
     description: couponItem.description,
-    validFrom: couponItem.validFrom instanceof Date ? couponItem.validFrom.toISOString() : couponItem.validFrom,
-    validUntil: couponItem.validUntil instanceof Date ? couponItem.validUntil.toISOString() : couponItem.validUntil
+    validFrom: couponItem.dateStart ,
+    validUntil: couponItem.dateEnd 
   }));
   
   

@@ -286,6 +286,7 @@ import './Checkout.scss';
 import DetailItem from './components/DetailItem';
 import axios from 'axios';
 // import { theme } from 'antd';
+import { useLocation } from 'react-router-dom';
 
 
 declare global {
@@ -329,6 +330,8 @@ const getItems = (panelStyle: React.CSSProperties) => [
 const Checkout = () => {
   const { token } = theme.useToken();
   const [createOrder, createOrderResult] = useCreateOrderMutation();
+  const location = useLocation();
+  const totalP = location.state?.totalPrice || 0;
 
   const panelStyle = {
     marginBottom: 0,
@@ -383,10 +386,10 @@ const Checkout = () => {
       const razorpayOptions = {
         key: 'rzp_test_LyBRVIW5CKxzOE', // Replace with your actual Razorpay API key
         // amount: response.data.amount*100,
-        amount: totalPrice * 100,  // Convert totalPrice to paise
+        amount: totalP * 100,  // Convert totalPrice to paise
         currency: response.data.currency,
         order_id: response.data.id,
-        name: 'Your App Name',
+        name: 'SkillTern',
         description: 'Purchase Description',
         image: 'https://example.com/your_logo.png',
         handler: async (response: any) => {
@@ -497,7 +500,7 @@ const Checkout = () => {
                   <Divider className='checkout__summary-divider' />
                   <div className='checkout__summary-row checkout__summary-total'>
                     <span className='checkout__summary-col checkout__summary-total-label'>Total:</span>
-                    <span className='checkout__summary-col checkout__summary-total-text'>${totalPrice}</span>
+                    <span className='checkout__summary-col checkout__summary-total-text'>${totalP}</span>
                   </div>
 
                   <div className='checkout__summary-notify'>
@@ -517,4 +520,10 @@ const Checkout = () => {
 };
 
 export default Checkout;
+
+
+
+
+
+
 

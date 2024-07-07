@@ -26,8 +26,8 @@ const CreateCoupon: React.FC<CreateCouponProps> = ({ isOpen, onClose, couponId }
     code: '',
     discount: 0,
     description: '',
-    validFrom: new Date(), // Initial validFrom date, adjust as needed
-    validUntil: new Date() // Initial validUntil date, adjust as needed
+    dateStart: new Date(), // Initial validFrom date, adjust as needed
+    dateEnd: new Date() // Initial validUntil date, adjust as needed
   });
 
   useEffect(() => {
@@ -53,8 +53,8 @@ const CreateCoupon: React.FC<CreateCouponProps> = ({ isOpen, onClose, couponId }
         code: '',
         discount: 0,
         description: '',
-        validFrom: new Date(),
-        validUntil: new Date()
+        dateStart: new Date(),
+        dateEnd: new Date()
       });
       form.resetFields();
     }
@@ -142,7 +142,7 @@ const CreateCoupon: React.FC<CreateCouponProps> = ({ isOpen, onClose, couponId }
         <Row gutter={16}>
           <Col span={12}>
             <Form.Item
-              name="validFrom"
+              name="dateStart"
               label="Valid From"
               rules={[{ required: true, message: 'Please select valid from date' }]}
             >
@@ -151,7 +151,7 @@ const CreateCoupon: React.FC<CreateCouponProps> = ({ isOpen, onClose, couponId }
           </Col>
           <Col span={12}>
             <Form.Item
-              name="validUntil"
+              name="dateEnd"
               label="Valid Until"
               rules={[{ required: true, message: 'Please select valid until date' }]}
             >

@@ -7,11 +7,12 @@ import { startEditCoupon } from './coupon.slice';
 import CouponsList from './components/CouponsList';
 import CreateCoupon from './components/CreateCoupon';
 import { ICoupon } from '../../../types/coupon.type';
+import {IParams} from  '../../../types/params.type';
 
 const { Search } = Input;
 
 const Coupons = () => {
-  const [params, setParams] = useState({
+  const [params, setParams] = useState<IParams>({
     _limit: 12,
     _page: 1,
     _q: ''
@@ -24,6 +25,14 @@ const Coupons = () => {
   const onSearchHandler = (value: string) => {
     setParams({ ...params, _q: value });
   };
+
+  // const { data, isFetching } = useGetCouponsQuery({ params });
+  // const [open, setOpen] = useState(false);
+  // const dispatch = useDispatch();
+
+  // const onSearchHandler = (value: string) => {
+  //   setParams({ ...params, _q: value });
+  // };
 
   const newCouponHandler = () => {
     dispatch(startEditCoupon(''));
