@@ -17,6 +17,14 @@ import { openAuthModal } from '../../auth.slice';
 import { useGetCoursesQuery, useGetPopularCoursesQuery } from '../client.service';
 import CourseList from '../components/CourseList';
 import './Home.scss';
+import AboutSection from './AboutSection/AboutSection';
+import TeamSection from './TeamSection';
+import WhyChooseUs from './WhyChooseUs';
+import ContactForm from './ContactForm';
+import CtaOne from './CtaOne';
+import CtaThree from './CtaThree';
+import BlogSection from './blogSection';
+import TestimonialsSection from './Testimonial';
 
 const HomePage = () => {
   const [courseLimit, setCourseLimit] = useState(4);
@@ -163,7 +171,7 @@ const HomePage = () => {
   return (
     <div>
       {/* Banner */}
-      <div className='banner mt-sm '>
+      <div className='banner '>
         <div className='banner__wrapper'>
           <div className='banner__wrapper-left'>
             <div className='banner__cta-section'>
@@ -174,9 +182,15 @@ const HomePage = () => {
               </p>
               <div className='banner__cta--btns'>
                 <Space>
-                  <Button onClick={startNowHandler} className='banner__cta-start-now btn btn-md btn-secondary'>
+                  {/* <Button onClick={startNowHandler} className='banner__cta-start-now btn btn-md bg-yellow-600 w-[140px]'>
                     Start Now
-                  </Button>
+                  </Button> */}
+                  <button
+                    onClick={startNowHandler}
+                    className='bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg text-lg'
+                  >
+                    Start Now
+                  </button>
                   <Link to='/courses'>
                     <Button className='btn btn-md btn-tertiary'>View Courses</Button>
                   </Link>
@@ -231,6 +245,7 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+          <AboutSection />
 
           {/* Statistics */}
           <div className='statistics spacing-h-md '>
@@ -370,6 +385,13 @@ const HomePage = () => {
           />
         )}
       </div>
+      {/* <CtaThree/> */}
+      <TestimonialsSection />
+      <TeamSection />
+      <WhyChooseUs />
+      <BlogSection />
+      <ContactForm />
+      <CtaOne />
     </div>
   );
 };

@@ -1,0 +1,40 @@
+.cta-three__bg {
+    position: relative;
+    background-size: cover;
+    background-position: 50% -100%;
+    height: 100%;
+    background-image: url('../../../assets/images/backgrounds/cta-bg-1-1.jpg');
+}
+
+.cta-three__inner__content {
+    animation-name: fadeInUp;
+    animation-delay: 500ms;
+}
+
+.cta-three__inner__link {
+    animation-name: fadeInUp;
+    animation-delay: 500ms;
+}
+
+.cta-three__inner__link__btn {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.39;
+    color: #ffffff;
+    background-color: #0f67b6;
+    border-color: #0f67b6;
+    padding-top: 12px;
+    padding-right: 40px;
+    padding-bottom: 12px;
+    padding-left: 40px;
+    display: inline-block;
+    margin-top: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.cta-three__inner__link__btn:hover {
+    background-color: #114c83;
+    border-color: #114c83;
+}

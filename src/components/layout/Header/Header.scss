@@ -2,13 +2,18 @@
 @import "../../../assets/sass/mixins";
 
 .header {
-    position: fixed;
+    // position: fixed;
+    position: relative;
+
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba($brand-primary-color, 0.3);
+    // background-color: #fff;
+    background-color: black;
+    // box-shadow: 0 0 10px rgba($brand-primary-color, 0.3);
+    box-shadow: 0 0 10px rgba(white, 0.3);
+
     &__wrapper {
         width: 1200px;
         margin: 0 auto;
@@ -19,29 +24,34 @@
         padding: 1rem 0rem;
         font-size: 1.7rem;
         font-family: $text-font;
-        color: $brand-primary-color;
+        // color: $brand-primary-color;
+        color: white;
     }
 
     
     &__logo {   
-       
+        width: 180px;
+      
     }
     
 
     &__nav {
        display: flex;
        align-items: center;
+       color: white;
     }
 
     &__nav-list {
         @include list-reset;
         display: flex;
         margin-right: 2rem;
+        color: white;
     }
 
     &__nav-item {
        
-        color: inherit;
+        // color: inherit;
+        color: white;
         margin: 0rem 1.2rem;
         display: flex;
         align-items: center;
@@ -50,17 +60,20 @@
             margin-left: 0rem;
         }
         &-user-icon {
+            color: white;
             
         }
     }
 
     &__nav-link {
        
-        color: inherit;
+        // color: inherit;
+        color: white;
         text-decoration: none;
 
         &-icon {
            font-size: 2.2rem;
+           color: white;
         }
     }
 
@@ -70,6 +83,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            color: white;
         }
 
         &-item {
@@ -79,7 +93,8 @@
             font-weight: 400;
             text-transform: capitalize;
             a {
-                color: inherit;
+                // color: inherit;
+                color: white;
                 text-decoration: none;
                 text-transform: capitalize;
             }
@@ -92,6 +107,7 @@
         &__nav {
             &-list {
                 display: none;
+                color: white;
             }
         }
 
@@ -114,10 +130,12 @@
         &__nav {
             &-list {
                 display: none;
+                color: white;
             }
 
             &-item {
                &--cart {
+                color: white;
 
                }
             }
@@ -126,9 +144,9 @@
     
     @media (max-width: map-get($breakpoint, mobile-sm)) {
         // Adjust styles for mobile
-            width: 375px;
+            width: 100px;
             &__wrapper {
-                width: 375px;
+                width: 100px;
             }
 
             &__search {
@@ -136,7 +154,8 @@
             }
 
             &__logo {
-                margin-left: 2rem;
+                // margin-left: 2rem;
+                // margin-left: 20px;
             }
 
             &__wrapper {

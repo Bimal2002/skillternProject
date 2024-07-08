@@ -14,7 +14,8 @@ import { RootState } from '../../../store/store';
 import { IUser } from '../../../types/user.type';
 import Button from '../../Button';
 import './Header.scss';
-import CategoriesNav from './components/CategoriesNav';
+// import CategoriesNav from './components/CategoriesNav';
+import logo from '../../../assets/images/Skilltern.png';
 
 const { Search } = Input;
 
@@ -253,21 +254,21 @@ const Header = () => {
   };
 
   return (
-    <div className='header'>
-      <div className='header__wrapper'>
+    <div className='header bg-black text-white'>
+      <div className='header__wrapper bg-black text-white'>
         {/* <Spin size='large' /> */}
         <MenuOutlined onClick={showMobileMenuHandler} className='header__menu-mobile font-bold lg:hidden' />
-        <Link to='/' className='header__logo'>
+        <Link to='/' className='header__logo '>
           <img
             // src='https://cdn.mycourse.app/images/site-templates/79ae2363c5798f1d6e79d14f2c7c3730.png'
-            src='skillternlogo.png'
+            src={logo}
             alt=''
-            className='header__logo-img'
+            className='header__logo-img p-0 ml-[-100px]  '
           />
         </Link>
-        <div className='header__search'>
+        <div className='header__search mr-10'>
           <Search
-            style={{ width: '30rem' }}
+            style={{ width: '35rem' }}
             placeholder='Search to find your suitable courses'
             onSearch={onSearch}
             enterButton
@@ -311,13 +312,13 @@ const Header = () => {
               </Link>
             </li> */}
             {isAuth && (
-              <li className='header__nav-item'>
+              <li className='header__nav-item text-white'>
                 <Dropdown menu={menuWishlistProps} placement='bottomRight'>
                   <Badge dot={true}>
                     {/* <Avatar shape="square" size="large" /> */}
                     <HeartOutlined
-                      className='header__nav-item-user-icon header__nav-link-icon'
-                      style={{ cursor: 'pointer' }}
+                      className='header__nav-item-user-icon header__nav-link-icon text-white '
+                      style={{ cursor: 'pointer', color:'white' }}
                     />
                     {/* <UserOutlined className='header__nav-item-user-icon' style={{ cursor: 'pointer' }} /> */}
                   </Badge>
@@ -326,13 +327,13 @@ const Header = () => {
             )}
 
             {isAuth && (
-              <li className='header__nav-item'>
+              <li className='header__nav-item text-white '>
                 <Dropdown menu={menuNotificationsProps} placement='bottomRight'>
                   <Badge dot={true}>
                     {/* <Avatar shape="square" size="large" /> */}
                     <BellOutlined
-                      className='header__nav-item-notify-icon header__nav-link-icon'
-                      style={{ cursor: 'pointer' }}
+                      className='header__nav-item-notify-icon header__nav-link-icon text-white'
+                      style={{ cursor: 'pointer', color: 'white' }}
                     />
                     {/* <UserOutlined className='header__nav-item-user-icon' style={{ cursor: 'pointer' }} /> */}
                   </Badge>
@@ -372,7 +373,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {currentPath === '/' && showCategoriesNav && <CategoriesNav />}
+      {/* {currentPath === '/' && showCategoriesNav && <CategoriesNav />} */}
       <Modal title='' open={isOpenAuthModal} onOk={handleOk} onCancel={handleCancel}>
         {authState === 'login' && <Login onClick={changeAuthState} />}
         {authState === 'signup' && <Signup onClick={changeAuthState} />}
